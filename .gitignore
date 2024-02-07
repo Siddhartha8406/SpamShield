@@ -1,0 +1,43 @@
+# Ignore build output
+/dist/
+/build/
+
+# Ignore node_modules directory
+/node_modules/
+
+# Ignore development files
+*.log
+*.bak
+*.tmp
+
+# Ignore IDE and editor files
+.vscode/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore Chrome extension key file
+.pem
+
+# Ignore any other files or directories specific to your project
+# Ignore build output
+/dist/
+
+# Ignore node_modules directory
+/node_modules/
+
+# Ignore development files
+*.log
+*.bak
+*.tmp
+
+# Ignore IDE and editor files
+.vscode/
+
+# Ignore Chrome extension key file
+.pem
+
+# Ignore any other generated or temporary files
+.DS_Store
+Thumbs.db
