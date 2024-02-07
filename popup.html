@@ -1,0 +1,63 @@
+<html>
+    <style>
+        body {
+            min-width: 357px;
+            overflow-x: hidden;
+            background-color: #40A2E3;
+        }
+        h1 {
+            color: #FFF6E9;
+            font-family: Arial, sans-serif;
+            font-size: 2.5em;
+            text-align: center;
+        }
+        #footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        .action-div {
+            display: flex;
+            justify-content: center;
+        }
+
+        #button-div{
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        #click-me-button {
+            background-color: #0D9276;
+            color: black;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+        #status-div{
+            font-size: 28px;   
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    </style>
+    <body>
+        <h1 id="heading">Spam Mail</h1>
+        <div class="action-div" id = "button-div">
+            <button id="click-me-button">Click me!</button>
+        </div>
+        <div class="action-div" id="status-div">
+            <p id="status">SPAM</p>
+        </div>
+        <br>
+        <div id="footer">
+            <a target="_blank" href="https://icons8.com/icon/dh9e0Dyzth0P/spam-mail">Spam Mail</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        </div>
+        <script src="popup.js"></script>
+    </body>
+</html>
