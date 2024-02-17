@@ -4,14 +4,25 @@
     "version": "1.0",
     "description": "A web extension that detects spam mail",
     "permissions": [
+        "webNavigation",
         "tabs",
         "activeTab",
         "userScripts",
-        "scripting"
+        "scripting",
+        "background"
     ],
     "host_permissions": [
-        "https://mail.google.com/*"
+        "https://mail.google.com/*",
+        "http://*/*",
+        "https://*/*"
     ],
+    "content_scripts": [
+        {
+            "matches": ["https://mail.google.com/*"],
+            "js": ["content.js"]
+        }
+    ],
+    
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
