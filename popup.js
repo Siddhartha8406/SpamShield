@@ -11,15 +11,16 @@ document.getElementById("click-me-button").addEventListener('click', async funct
             target: { tabId: activeTabId },
             function: DOMtoString,
         }).then((result) => {
-            let user_mail = result[0].result;
+            var user_mail = result[0].result;
+            console.log(user_mail);
+            console.log(user_mail.length);
         });
     });
-    console.log(user_mail);
 });
 
 function DOMtoString(selector) {
-    return document.getElementById(":1a1").textContent;
-
+    var temp_var = document.getElementsByClassName("a3s");
+    return temp_var[0].textContent;
 }
 
 function spamMail(){

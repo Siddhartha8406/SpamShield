@@ -6,21 +6,10 @@
     "permissions": [
         "webNavigation",
         "tabs",
-        "activeTab",
-        "userScripts",
-        "scripting",
-        "background"
+        "scripting"
     ],
     "host_permissions": [
-        "https://mail.google.com/*",
-        "http://*/*",
-        "https://*/*"
-    ],
-    "content_scripts": [
-        {
-            "matches": ["https://mail.google.com/*"],
-            "js": ["content.js"]
-        }
+        "https://mail.google.com/*"
     ],
     
     "action": {
