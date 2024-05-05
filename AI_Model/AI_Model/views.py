@@ -14,18 +14,13 @@ def predict(request):
     if request.method == 'POST':
         try:
             print("POST Request")
-            text = request.POST.get('mail')
+            print(request.POST)
+            text = request.POST['email']
             text = str(text)
-            print(text)
-            tokenizer = Tokenizer()
+            print("\n\n\n\n\n"+text+"\n\n\n\n\n")
 
             def spam_ham(text):
-                sms_test = [text]
-                sms_seq = tokenizer.texts_to_sequences(sms_test)
-                sms_pad = pad_sequences(sms_seq, maxlen= 20, padding='post')
-                tokenizer.index_word
-                sms_pad
-                a = model.predict(sms_pad)
+                a = model.predict(text)
                 a = a[0][0]
                 a = a*100
 
@@ -37,8 +32,9 @@ def predict(request):
                     return JsonResponse({'error': 'Invalid input'})
 
             spam_ham(text)
+            return JsonResponse({'predictions': 'spam', 'confidence': 0.9999})
         except Exception as e:
-            print(e)
+            print("Error: ", e)
             return JsonResponse({'error': 'Invalid input'})
 
     else:

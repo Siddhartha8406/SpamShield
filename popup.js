@@ -13,19 +13,28 @@ document.getElementById("click-me-button").addEventListener('click', async funct
         }).then((result) => {
             var user_mail = result[0].result;
             var recived_mail = String(user_mail)
+        
             console.log(recived_mail);
 
+            var body = JSON.stringify({
+                userId: 1,
+                title: "Fix my bugs", 
+                completed: false
+              });              
 
-            fetch('http://127.0.0.1:8000/predict/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email: recived_mail }),
-            }).then(response => response.json()).then(response => console.log(JSON.stringify(response)))
+            const xhr = new XMLHttpRequest()
+            xhr.open("POST", 'http://127.0.0.1:8000/predict/') 
+            xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8")
+            xhr.send(body);
 
 
-
+            // fetch('http://127.0.0.1:8000/predict/', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({ "email": String(recived_mail) }),
+            // }).then(response => response.json()).then(response => console.log(JSON.stringify(response)))
 
             if (recived_mail.includes("Siddhartha Reddy")){
                 notSpamMail();
