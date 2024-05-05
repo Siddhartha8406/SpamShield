@@ -13,11 +13,11 @@ model = load_model('/Users/siddharthareddy/FinalYearProject/SpamSheild/new-train
 def predict(request):
     if request.method == 'POST':
         try:
-            print("POST Request")
+            print("[Server]: POST Request")
             print(request.POST)
             text = request.POST['email']
             text = str(text)
-            print("\n\n\n\n\n"+text+"\n\n\n\n\n")
+            print("\n [Server Log]:"+text+"\n")
 
             def spam_ham(text):
                 a = model.predict(text)
@@ -38,5 +38,5 @@ def predict(request):
             return JsonResponse({'error': 'Invalid input'})
 
     else:
-        print("GET Request")
+        print("[Server]: GET Request")
         return JsonResponse({'error': 'Invalid request method'})
