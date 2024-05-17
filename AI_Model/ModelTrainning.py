@@ -101,3 +101,4 @@ spam_ham(text)
 
 model_prod = tf.keras.models.load_model('./new-trained-model.h5', custom_objects={'KerasLayer':hub.KerasLayer})
 model_prod.summary()
+ 

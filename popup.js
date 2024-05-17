@@ -16,25 +16,18 @@ document.getElementById("click-me-button").addEventListener('click', async funct
         
             console.log(recived_mail);
 
-            var body = JSON.stringify({
-                userId: 1,
-                title: "Fix my bugs", 
-                completed: false
-              });              
+            var body = JSON.stringify({ 
+                mail: recived_mail
+              });
 
-            const xhr = new XMLHttpRequest()
-            xhr.open("POST", 'http://127.0.0.1:8000/predict/') 
-            xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8")
-            xhr.send(body);
-
-
-            // fetch('http://127.0.0.1:8000/predict/', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify({ "email": String(recived_mail) }),
-            // }).then(response => response.json()).then(response => console.log(JSON.stringify(response)))
+            fetch('http://127.0.0.1:8000/predict/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: body,
+            }).then(response => response.json()).then(response => console.log(JSON.stringify(response)))
+            
 
             if (recived_mail.includes("Siddhartha Reddy")){
                 notSpamMail();
@@ -67,7 +60,7 @@ function spamMail(){
 function notSpamMail(){
     document.getElementById("button-div").style.display = "none";
     document.getElementById("status-div").style.display = "flex";
-    document.getElementById("status").textContent = "NOT SPAM";
+    document.getElementById("status").textContent = "Legitimate";
 
     document.body.style.backgroundColor = "#99cc33";
     document.getElementById("status").style.color = "#40a6ce";
